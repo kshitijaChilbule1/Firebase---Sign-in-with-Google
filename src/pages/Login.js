@@ -1,46 +1,17 @@
-import React, { Component } from 'react';
-import { Button } from 'react-bootstrap';
-import NavbarComp from "../components/NavbarComp";
+import "../App.css";
+import { signInWithGoogle } from "../Firebase";
 
-class Login extends Component {
-    constructor() {
-        super();
-        this.state = {
-            name: '',
-            password: ''
-        }
-    }
-    login() {
-        console.warn(this.state)
-        fetch("http://localhost:3000/login?q=" + this.state.name).then((data) => {
-            data.json().then((resp) => {
-                console.warn("resp", resp)
-                if (resp.length > 0) {
-                    localStorage.setItem('login',JSON.stringify(resp))
-                    console.warn(this.props.history.push('list'))
-                }
-                else {
-                    alert("Pelase check username and password")
-                }
-
-            })
-        })
-    }
-    render() {
-        return (
-            <div>
-                <NavbarComp/>
-                <input type="text"
-                    placeholder="enter name"
-                    name="user" onChange={(event) => this.setState({ name: event.target.value })} /> <br /> <br />
-                <input
-                    placeholder="enter password"
-                    type="password" name="password" onChange={(event) => this.setState({ password: event.target.value })} /> <br /> <br />
-                <button onClick={() => { this.login() }} >Login</button>
-
-            </div>
-        );
-    }
+function Login() {
+  return (
+      <>
+      <button class="login-with-google-btn" onClick={signInWithGoogle}>
+        Sign in with Google
+      </button>
+      <h1>{localStorage.getItem("name")}</h1>
+      <h1>{localStorage.getItem("email")}</h1>
+      <img src={localStorage.getItem("profilePic")} />
+      </>
+  );
 }
 
 export default Login;
