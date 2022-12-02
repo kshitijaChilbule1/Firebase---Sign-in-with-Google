@@ -1,9 +1,11 @@
 import "../App.css";
+import NavbarComp from "../components/NavbarComp";
 import { signInWithGoogle } from "../Firebase";
 
 function Login() {
   return (
       <>
+      <NavbarComp/>
       <button class="login-with-google-btn" onClick={signInWithGoogle}>
         Sign in with Google
       </button>

@@ -36,7 +36,7 @@ function CardsComp() {
             <Card.Body>
               <Card.Title>Book Table</Card.Title>
               <Card.Text>
-                Explore the city’s top restaurants and book a table.
+                Explore the city’s top restaurants.
               </Card.Text>
             </Card.Body>
           </Card>

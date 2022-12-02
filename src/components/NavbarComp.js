@@ -17,7 +17,7 @@ function NavbarComp() {
         color: '#fff'
     }
   return (
-    <Navbar bg="dark" expand="lg" style={{boxShadow: 'rgba(0, 0, 0, 0.45) 0px 25px 20px -20px'}}>
+    <Navbar bg="dark" expand="lg" style={{boxShadow: 'rgba(0, 0, 0, 0.45) 0px 25px 20px -20px', top: 0, position:'sticky'}}>
       <Container>
         <Navbar.Brand href="#home" style={logoStyles}><b>FUDATU</b></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
